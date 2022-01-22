@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRCEasyInstaller));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,10 +57,10 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(117, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(553, 124);
+            this.label2.Size = new System.Drawing.Size(648, 124);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Thank you for dowloading FRCEasyInstaller.\r\n\r\nPlease select a game version below " +
-    "- \r\nThis will install wpilib and NI tools.\r\n";
+            this.label2.Text = "Thank you for dowloading FRCEasyInstaller.\r\n\r\nPlease choose what you\'d like to in" +
+    "stall.\r\nNote: Installing both at the same time is not possible.\r\n";
             // 
             // label3
             // 
@@ -79,8 +78,7 @@
             this.versionSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.versionSelectBox.FormattingEnabled = true;
             this.versionSelectBox.Items.AddRange(new object[] {
-            "NI + wpilib (2022)",
-            "NI Only (2022)",
+            "Game Tools (2022)",
             "wpilib (2022)"});
             this.versionSelectBox.Location = new System.Drawing.Point(272, 259);
             this.versionSelectBox.Name = "versionSelectBox";
@@ -106,7 +104,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::FRCEasyInstaller.Properties.Resources.ProgLogo;
             this.pictureBox1.Location = new System.Drawing.Point(149, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(85, 81);
@@ -116,7 +114,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::FRCEasyInstaller.Properties.Resources.ProgLogo;
             this.pictureBox2.Location = new System.Drawing.Point(548, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(85, 81);
@@ -136,9 +134,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FRCEasyInstaller";
             this.Text = "FIRST/FRC - Easy Installer";
+            this.Load += new System.EventHandler(this.FRCEasyInstaller_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

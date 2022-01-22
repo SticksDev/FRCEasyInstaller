@@ -13,28 +13,22 @@ namespace FRCEasyInstaller
         }
 
 
-        private void initInstaller(string type)
+        private async void initInstaller(string type)
         {
             var form = new InstallerWindow();
             switch (type)
             { 
-                case "all":
-                    this.Hide();
-                    form.FormClosed += (s, args) => this.Close();
-                    form.Show();
-                    form.invokeInstaller("all");
-                    break;
                 case "niOnly":
                     this.Hide();
                     form.FormClosed += (s, args) => this.Close();
                     form.Show();
-                    form.invokeInstaller("niOnly");
+                    await form.invokeInstaller("niOnly");
                     break;
                 case "libOnly":
                     this.Hide();
                     form.FormClosed += (s, args) => this.Close();
                     form.Show();
-                    form.invokeInstaller("lib");
+                    await form.invokeInstaller("lib");
                     break;
                 default:
                     MessageBox.Show("An unknown case was passed: " + type, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -52,10 +46,7 @@ namespace FRCEasyInstaller
             {
                 switch (versionSelectBox.SelectedItem)
                 {
-                    case "NI + wpilib (2022)":
-                        initInstaller("all");
-                        break;
-                    case "NI Only (2022)":
+                    case "Game Tools (2022)":
                         initInstaller("niOnly");
                         break;
                     case "wpilib (2022)":
@@ -66,6 +57,11 @@ namespace FRCEasyInstaller
                         break;
                 }
             }
+        }
+
+        private void FRCEasyInstaller_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.FRCEasyIco;
         }
     }
 }
