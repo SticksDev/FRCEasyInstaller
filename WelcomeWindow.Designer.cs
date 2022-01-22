@@ -135,6 +135,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FRCEasyInstaller";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FIRST/FRC - Easy Installer";
             this.Load += new System.EventHandler(this.FRCEasyInstaller_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

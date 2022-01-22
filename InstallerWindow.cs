@@ -100,6 +100,7 @@ namespace FRCEasyInstaller
                     webClient.DownloadFileCompleted += (object sender, AsyncCompletedEventArgs e) =>
                     {
                         DLoadState.Text = "";
+                        spinControlCheckBox.Visible = false;
                         using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(Path.Combine(currentpth, "installer-bin/WPIlib/WPIlib_x64.zip")))
                         {
                             zip.ExtractProgress += (object sender1, ExtractProgressEventArgs e1) =>
@@ -147,6 +148,7 @@ namespace FRCEasyInstaller
                     webClient.DownloadFileCompleted += (object sender, AsyncCompletedEventArgs e) =>
                     {
                         DLoadState.Text = "";
+                        spinControlCheckBox.Visible = false;
                         using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(Path.Combine(currentpth, "installer-bin/WPIlib/WPIlib_x32.zip")))
                         {
                             zip.ExtractProgress += (object sender1, ExtractProgressEventArgs e1) =>
